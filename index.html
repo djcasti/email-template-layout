@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .email-background {
+            background-color: #FAFAFA;
+            width: 100%;
+            height: 100%;
+        }
+
+        .email-container {
+            max-width: 800px;
+            background-color: #FFFFFF;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            font-size: 1.2em;
+            margin: 0 auto;
+            padding: 0;
+            overflow: hidden;
+            color: #808080;
+        }
+
+        .header {
+            background-color: #2E4250;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 161px;
+            height: auto;
+            border: 0;
+        }
+
+        .orderNum {
+            flex-grow: 1;
+            justify-self: right;
+            font-size: 1em;
+            color: #FFFFFF;
+            text-align: right;
+        }
+
+        .titulo-centrado {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #243642;
+            margin: 1.5em;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #243642;
+            margin: 1em 0;
+            text-align: left;
+        }
+
+        .card {
+            border: 1px solid #F0F0F0;
+            margin: 0 1em;
+            padding: 1em;
+        }
+
+        .card-header {
+            display: flex;
+            flex-flow: row;
+            align-items: stretch;
+        }
+
+        .card-body {
+            display: flex;
+            flex-flow: row;
+            align-items: stretch;
+            margin: 1em 0;
+        }
+
+        .fotoEvento {
+            width: 320px;
+            height: auto;
+        }
+
+        .detalleEvento {
+            padding: 0 1em;
+            font-size: 0.9em;
+            color: #909090;
+            text-align: left;
+            line-height: 0.8em;
+            word-wrap: normal;
+        }
+
+        .tituloEvento {
+            font-size: 1.1em;
+            text-transform: uppercase;
+            color: #353B47;
+            font-weight: bold;
+            margin-bottom: 1.5em;
+        }
+
+        .detalleTickets {
+            flex-grow: 1;
+        }
+
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+            border: 1px solid #909090;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.3rem;
+            vertical-align: top;
+            border: 1px solid #909090;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border: 1px solid #909090;
+            color: #909090;
+            text-transform: uppercase;
+            font-size: 1em;
+        }
+
+        .table tbody td {
+            color: #353B47;
+            text-transform: uppercase;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .codigoBarras {
+            padding: 0 1em;
+        }
+
+        .qrCode {
+            width: 140px;
+            height: 140px;
+        }
+
+        .orderSummary,
+        .location,
+        .terminos {
+            margin: 2em 1em;
+        }
+
+        .tableSummary {
+            width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        .tableSummary th,
+        .tableSummary td {
+            padding: 0.5rem;
+            vertical-align: top;
+            border: 0;
+        }
+
+        .tableSummary thead th {
+            vertical-align: bottom;
+            border: 0;
+            color: #466A83;
+            text-transform: capitalize;
+            font-size: 1em;
+        }
+
+        .tableSummary tbody td {
+            color: #808080;
+            font-size: 1em;
+            border-top: 1px solid #909090;
+        }
+
+        .subtotal {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 1.1em;
+            color: #243642;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .tdcMask {
+            text-align: right;
+            color: #999999;
+            font-size: 1em;
+            margin: 1em 0;
+        }
+
+        .creditCard {
+            width: 27px;
+            height: auto;
+            display: inline-block;
+        }
+
+        .mapa {
+            position: relative;
+            display: block;
+            width: 100%;
+            min-width: 250px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .listaTerminos {
+            text-align: left;
+            list-style: none;
+            line-height: 2em;
+            padding-left: 0;
+        }
+
+        .contactInfo {
+            margin: 3em 1em;
+            text-align: center;
+            font-size: 0.8em;
+        }
+
+        .subtitulo {
+            font-size: 1.4em;
+            color: #707070;
+            margin-bottom: 1em;
+        }
+
+        .phone {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer {
+            background-color: #000000;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 0.8em;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center
+        }
+
+        .logoFooter {
+            text-align: left;
+        }
+
+        .logoFooter .logo {
+            margin-bottom: 5px;
+        }
+
+        .address {
+            flex-grow: 1;
+            text-align: center
+        }
+
+        .iconSocial {
+            width: 40px;
+            height: 40px;
+            padding: 1em;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+
+            .card-header,
+            .card-body,
+            .footer {
+                flex-flow: column;
+                align-items: center;
+
+            }
+
+            .fotoEvento {
+                width: 100%;
+            }
+
+            .detalleEvento {
+                margin: 1em 0;
+            }
+
+            .detalleTickets {
+                width: 100%;
+                margin-bottom: 1em;
+            }
+
+            .logoFooter,
+            .address,
+            .social {
+                text-align: center;
+                margin: 1em 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-background">
+        <div class="email-container">
+            <div class="header">
+                <img class="logo" src="LogoColony.png" />
+                <div class="orderNum">
+                    08/10/2018<br>
+                    <b>Orden: #000000</b>
+                </div>
+            </div>
+
+            <p class="titulo-centrado">
+                Hi, Raul!<br />
+                THIS IS YOUR TICKET
+            </p>
+
+            <div class="card">
+                <div class="card-header">
+                    <img class="fotoEvento" src="Evento.jpg" />
+                    <div class="detalleEvento">
+                        <div class="tituloEvento">ONE NIGHT IN MIAMI</div>
+                        <p>Sábado 22 de Octubre de 2018 22:00 Horas</p>
+                        <p>Hotel Crow Plaza - Región Metropolitana</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="detalleTickets">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Row</th>
+                                    <th>Seat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Platea 1A</td>
+                                    <td>A</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Platea 1A</td>
+                                    <td>A</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Platea 1A</td>
+                                    <td>A</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="codigoBarras">
+                        <img class="qrCode" src="qrcode.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="orderSummary">
+                <div class="titulo">Order Summary</div>
+                <table class="tableSummary">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Tickets</th>
+                            <th>Price</th>
+                            <th>Fee</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>1</td>
+                            <td>$100.00</td>
+                            <td>$5.00</td>
+                            <td style="text-align:right">$105.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="subtotal">SUBTOTAL</td>
+                            <td style="text-align:right">$105.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="subtotal">Donations</td>
+                            <td style="text-align:right">$0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="total">Order Total: $105.00</div>
+                <div class="tdcMask">
+                    <img class="creditCard" src="credit-card.png" />
+                    **** 0000
+                </div>
+            </div>
+
+            <div class="location">
+                <div class="titulo">Where it is?</div>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.1296304333778!2d-66.86813018466667!3d10.490445967274423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a58fcea3122a1%3A0x2b7b3098c8d45af6!2sTorre+Easo%2C+Av.+Jos%C3%A9+Mart%C3%AD%2C+Caracas+1060%2C+Miranda!5e0!3m2!1ses-419!2sve!4v1539033013930"
+                        width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="terminos">
+                <div class="titulo">Enjoy the show & don’t forget</div>
+                <ul class="listaTerminos">
+                    <li>- If your using your mobile this is your ticket.</li>
+                    <li>- If you rather print the E Ticket make sure the QR code print correctly</li>
+                    <li>- This tickets are subjects to Colony theather’s policies</li>
+                </ul>
+            </div>
+
+            <div class="contactInfo">
+                <div class="subtitulo">For any assistance please call us</div>
+                <img class="phone" src="phone.png" />
+                <div class="titulo-centrado" style="margin: 0.5em 0px">800 211 14 14</div>
+                <div>Customer services schedule</div>
+                <div>MON - FRI 9:00 am to 7:00 pm SAT 10:00 am to 600 pm</div>
+            </div>
+
+            <div class="footer">
+                <div class="logoFooter">
+                    <img class="logo" src="LogoColony.png" />
+                    <div class="powered">Powered by: Ticketmundo.com</div>
+                </div>
+
+                <div class="address">
+                    1040 Lincoln Road<br />
+                    Miami Beach<br />
+                    FL 33139
+                </div>
+
+                <div class="social">
+                    <img class="iconSocial" src="facebook.png">
+                    <img class="iconSocial" src="instagram.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
