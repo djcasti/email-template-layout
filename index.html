@@ -273,31 +273,48 @@
         @media only screen and (max-device-width: 480px) {
 
             .card-header,
-            .card-body,
+            .header,
             .footer {
-                flex-flow: column;
-                align-items: center;
+                flex-flow: column !important;
+                align-items: center !important;
+            }
 
+            .card-body {
+                flex-direction: column-reverse !important;
+                align-items: center !important;
             }
 
             .fotoEvento {
-                width: 100%;
+                width: 100% !important;
             }
 
             .detalleEvento {
-                margin: 1em 0;
+                margin: 1em 0 !important;
+                line-height: 1em !important;
             }
 
             .detalleTickets {
-                width: 100%;
-                margin-bottom: 1em;
+                width: 100% !important;
+                margin-top: 2em !important;
             }
 
             .logoFooter,
             .address,
             .social {
-                text-align: center;
-                margin: 1em 0;
+                text-align: center !important;
+                margin: 1em 0 !important;
+            }
+
+            .tableSummary th,
+            .tableSummary td,
+            .table th,
+            .table td {
+                padding: 0.3rem !important;
+            }
+
+            .orderNum {
+                text-align: center !important;
+                margin-top: 1em !important;
             }
         }
     </style>
